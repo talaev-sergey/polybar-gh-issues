@@ -21,9 +21,9 @@ A simple **Python script** to display your **unread GitHub issues** directly in 
 
 This project uses the following Python libraries:
 
-aiohttp — asynchronous HTTP client for making API requests.
+[aiohttp](https://pypi.org/project/aiohttp/) — asynchronous HTTP client for making API requests.
 
-gidgethub — GitHub API client built on top of aiohttp.
+[gidgethub](https://pypi.org/project/gidgethub/) — GitHub API client built on top of aiohttp.
 
 ---
 ## Installation
@@ -53,7 +53,7 @@ chmod +x ~/.config/polybar/scripts/github_issues.py
 
 ## Polybar Configuration
 
-Add the following module to your `~/.config/polybar/config`:
+Add the following module to your `~/.config/polybar/modules.ini`:
 
 ```ini
 [module/github_issues]
@@ -61,7 +61,13 @@ type = custom/script
 exec = ~/.config/polybar/scripts/github_issues.py
 interval = 60
 ```
+and add module to `~/.config/polybar/config.ini`:
 
+```ini
+module-left= ...
+module-center= github_issues
+module-right= ...
+```
 ---
 
 ## Configuration
