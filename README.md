@@ -21,9 +21,16 @@ A simple **Python script** to display your **unread GitHub issues** directly in 
 
 This project uses the following Python libraries:
 
-- [aiohttp](https://pypi.org/project/aiohttp/) — asynchronous HTTP client for making API requests.
+- [aiohttp](https://pypi.org/project/aiohttp/)
 
-- [gidgethub](https://pypi.org/project/gidgethub/) — GitHub API client built on top of aiohttp.
+  Asynchronous HTTP client/server framework for asyncio and Python.
+  
+  Licensed under the [Apache License 2.0.](https://github.com/aio-libs/aiohttp/tree/master?tab=License-1-ov-file)
+- [gidgethub](https://pypi.org/project/gidgethub/)
+
+  GitHub API client for Python.
+  
+  Licensed under the [Apache License 2.0.](https://github.com/gidgethub/gidgethub?tab=Apache-2.0-1-ov-file)
 
 ---
 ## Installation
