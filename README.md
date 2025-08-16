@@ -21,14 +21,18 @@ A simple **Python script** to display your **unread GitHub issues** directly in 
 
 This project uses the following Python libraries:
 
-[aiohttp](https://pypi.org/project/aiohttp/) — asynchronous HTTP client for making API requests.
+- [aiohttp](https://pypi.org/project/aiohttp/) — asynchronous HTTP client for making API requests.
 
-[gidgethub](https://pypi.org/project/gidgethub/) — GitHub API client built on top of aiohttp.
+- [gidgethub](https://pypi.org/project/gidgethub/) — GitHub API client built on top of aiohttp.
 
 ---
 ## Installation
 
-1. **Create a Python virtual environment** (if not already created):
+1. **Install JetBrainsMono Nerd Font**:
+
+- Download and install [Nerd Fonts](https://www.nerdfonts.com/font-downloads)
+
+2. **Create a Python virtual environment** (if not already created):
 
 ```bash
 mkdir -p ~/.local/python-envs/polybar
@@ -37,13 +41,13 @@ source ~/.local/python-envs/polybar/bin/activate
 pip install aiohttp gidgethub
 ```
 
-2. **Clone or download** this script to your system:
+3. **Clone or download** this script to your system:
 
 ```bash
 ~/.config/polybar/scripts/github_issues.py
 ```
 
-3. **Make it executable**:
+4. **Make it executable**:
 
 ```bash
 chmod +x ~/.config/polybar/scripts/github_issues.py
@@ -86,10 +90,19 @@ gh = GitHubAPI(session, "your_github_username", oauth_token=TOKEN)
 
 ## Usage
 
-- After configuring Polybar, your bar will show:
-  - `` → no unread issues.
-  - ` <number>` → number of unread issues.
-  - ` !` → error in authentication or network issue.
+ After configuring Polybar, your bar will show: 
+  
+  no unread issues.
+
+  ![img](assets/screenshot_no_unread.png)
+
+  number of unread issues.
+
+  ![img](assets/screenshot_unread.png)
+
+  error in authentication or network issue.
+  
+  ![img](assets/screenshot_error.png) 
 
 ---
 
