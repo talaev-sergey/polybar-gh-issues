@@ -48,16 +48,17 @@ source ~/.local/python-envs/polybar/bin/activate
 pip install aiohttp gidgethub
 ```
 
-3. **Clone or download** this script to your system:
+3. **Clone or download** this repo to your system:
 
 ```bash
-~/.config/polybar/scripts/github_issues.py
+cd ~/.config/polybar/scripts/
+git clone https://github.com/talaev-sergey/polybar-gh-issues.git
 ```
 
 4. **Make it executable**:
 
 ```bash
-chmod +x ~/.config/polybar/scripts/github_issues.py
+chmod +x ~/.config/polybar/scripts/polybar-gh-issues/main.py
 ```
 
 ---
@@ -69,9 +70,11 @@ Add the following module to your `~/.config/polybar/modules.ini`:
 ```ini
 [module/github_issues]
 type = custom/script
-exec = ~/.config/polybar/scripts/github_issues.py
+exec = ~/.config/polybar/scripts/polybar-gh-issues/main.py
 interval = 60
 ```
+- ❕ **Recommended to set interval >= 60 seconds to avoid excessive load on CPU and network**
+
 and add module to `~/.config/polybar/config.ini`:
 
 ```ini
@@ -87,7 +90,7 @@ Before using, edit the script to add your GitHub **personal access token** and *
 
 ```python
 TOKEN = "your_personal_access_token"
-gh = GitHubAPI(session, "your_github_username", oauth_token=TOKEN)
+USERNAME_GITHUB = "your_github_username"
 ```
 
 - **TOKEN**: Generate a GitHub personal access token with `notifications` scope: [GitHub Token](https://github.com/settings/tokens)
@@ -107,10 +110,13 @@ gh = GitHubAPI(session, "your_github_username", oauth_token=TOKEN)
 
   ![img](assets/screenshot_unread.png)
 
-  error in authentication or network issue.
+  error in authentication.
   
-  ![img](assets/screenshot_error.png) 
+  ![img](assets/screenshot_bad_token.png)
 
+  or network issue. 
+
+  ![img](assets/screenshot_client_error.png)
 ---
 
 ## Notes
